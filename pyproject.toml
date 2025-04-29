@@ -1,0 +1,11 @@
+[project]
+name = "three"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cryptography>=44.0.0",
+    "pycrypto>=2.6.1",
+    "requests>=2.32.3",
+]
