@@ -11,3 +11,7 @@ tokio = { version = "1.44.2", features = ["full"] }
 [[bin]]
 name = "three-rs"
 path = "three-rs.rs"
+
+[[bin]]
+name = "three-rs-short"
+path = "three-rs-short.rs"
