@@ -1,8 +1,15 @@
-SSL/TLS  Failures
+SSL/TLS  Failures on plus.three.ie
 ---
 
+Java works.
+Rust works.
+Nim fails
+Go fails
+GCC Go works
+Python may fail may work, depends on build.
 
-Python with static ssl library:
+
+Python 3.12.9 with static ssl library:
 
 ```
 <Failure: HTTPSConnectionPool(host='plus.three.ie', port=443): Max retries exceeded with url: /core/offers/top 
@@ -18,7 +25,7 @@ AttributeError: module '_ssl' has no attribute '__file__'. Did you mean: '__name
 ```
 
 
-Pyton with dynamic ssl library:
+Pyton 3.12.9 with dynamic ssl library (Fedora 41 python installed from fedora repository):
 ```
 <prints response>
 
