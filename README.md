@@ -1,12 +1,12 @@
 SSL/TLS  Failures on plus.three.ie
 ---
 
-Java works.
-Rust works.
-Nim fails
-Go fails
-GCC Go works
-Python may fail may work, depends on build.
+* Java works.
+* Rust works.
+* Nim fails.
+* Go fails.
+* GCC Go works.
+* Python may fail may work, depends on build.
 
 
 Python 3.12.9 with static ssl library:
