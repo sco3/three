@@ -1,4 +1,4 @@
-SSL V3  Failures
+SSL/TLS  Failures
 ---
 
 
@@ -47,10 +47,30 @@ print(ssl._ssl.__file__)
 
 ```
 
-Go fails:
+Normal Go fails:
 ```
 Get "https://plus.three.ie/core/offers/top": remote error: tls: handshake failure
 
 ```
 
-CGo works and uses dynamic opnessl library:
+CGo works.
+
+Check server with 
+```
+openssl s_client -connect plus.three.ie:443 | grep -i tls
+Connecting to 134.213.245.205
+depth=2 C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+verify return:1
+depth=1 C=US, O=SSL Corporation, CN=Entrust OV TLS Issuing RSA CA 1
+verify return:1
+depth=0 C=IE, L=Dublin 2, O=Three Ireland (Hutchison) Limited, CN=plus.three.ie
+verify return:1
+   i:C=US, O=SSL Corporation, CN=Entrust OV TLS Issuing RSA CA 1
+ 1 s:C=US, O=SSL Corporation, CN=Entrust OV TLS Issuing RSA CA 1
+   i:C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+ 2 s:C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+issuer=C=US, O=SSL Corporation, CN=Entrust OV TLS Issuing RSA CA 1
+New, TLSv1.2, Cipher is AES128-SHA256
+    Protocol  : TLSv1.2
+
+```
